@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:13.2-alpine
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=gymapp
+      - POSTGRES_PASSWORD=gymapp
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  api:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    command: cargo run
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - DATABASE_URL=postgres://gymapp:gymapp@db:5432/gymapp
+      - USERNAME=admin
+      - PASSWORD=admin
+      - SQLX_OFFLINE=true
+      - LOG_LEVEL=info
+    volumes:
+      - ./:/app
+      - api-build:/app/target
+
+volumes:
+  db:
+  api-build:
+

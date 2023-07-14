@@ -1,0 +1,1 @@
+INSERT INTO "ad" ("key") VALUES ($1) RETURNING *

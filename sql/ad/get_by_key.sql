@@ -1,0 +1,1 @@
+SELECT * FROM "ad" WHERE "key" = $1

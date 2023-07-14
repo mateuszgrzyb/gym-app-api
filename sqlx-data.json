@@ -1,0 +1,81 @@
+{
+  "db": "PostgreSQL",
+  "1c87207c8a05b79253b7f61db8fd0706e15a028e1ac9e58400c18e7a50332f16": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int4"
+        },
+        {
+          "name": "key",
+          "ordinal": 1,
+          "type_info": "Uuid"
+        }
+      ],
+      "nullable": [
+        false,
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Uuid"
+        ]
+      }
+    },
+    "query": "INSERT INTO \"ad\" (\"key\") VALUES ($1) RETURNING *"
+  },
+  "4cc3e85157b48ae24f7e0e49fd2ad8213195292d2ea3d9008033496b884fd025": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int4"
+        },
+        {
+          "name": "key",
+          "ordinal": 1,
+          "type_info": "Uuid"
+        }
+      ],
+      "nullable": [
+        false,
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Uuid"
+        ]
+      }
+    },
+    "query": "SELECT * FROM \"ad\" WHERE \"key\" = $1"
+  },
+  "bc7b3722bd8580a9b59f154b7eba4afdbfb3af9f0b363692f07ba80345c5fb68": {
+    "describe": {
+      "columns": [
+        {
+          "name": "id",
+          "ordinal": 0,
+          "type_info": "Int4"
+        },
+        {
+          "name": "key",
+          "ordinal": 1,
+          "type_info": "Uuid"
+        }
+      ],
+      "nullable": [
+        false,
+        false
+      ],
+      "parameters": {
+        "Left": [
+          "Int4"
+        ]
+      }
+    },
+    "query": "DELETE FROM \"ad\" WHERE \"id\" = $1 RETURNING *"
+  }
+}

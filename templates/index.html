@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            GymApp API
+        </title>
+        <style>
+            body {
+                width: 100vw;
+                height: 100vh;
+                padding: 0%;
+                margin: 0%;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                max-width: 70vw;
+                gap: 10px;
+
+                /* Center vertically and horizontally */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            } 
+            input {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="post" action="{{ endpoint }}">
+            <label>
+                Username
+                <input type="text" name="username"/>
+            </label>
+            <label>
+                Password
+                <input type="password" name="password"/>
+            </label>
+            <button type="submit">Generate key</button>
+        </form>
+    </body>
+</html>
