@@ -3,16 +3,10 @@ use std::sync::Arc;
 use axum::Server;
 use sqlx::postgres::PgPoolOptions;
 
-use crate::{
+use gymapp::{
     api::{get_router, AppData},
     env_vars::ENV_VARS,
 };
-
-pub mod api;
-pub mod env_vars;
-pub mod errors;
-pub mod models;
-pub mod services;
 
 #[tokio::main]
 async fn main() {
