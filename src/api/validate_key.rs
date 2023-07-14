@@ -13,7 +13,7 @@ use super::AppData;
 #[derive(TypedPath, Deserialize)]
 #[typed_path("/validate-key/:key")]
 pub struct Path {
-    key: Uuid,
+    pub key: Uuid,
 }
 
 #[derive(Serialize)]
